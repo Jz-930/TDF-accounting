@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0073BC;
+  --color-primary-dark: #002136;
+  --color-accent: #5A9FC9;
+  --color-success: #10B981;
+  --color-background: #ffffff;
+  --color-foreground: #1a1a1a;
+  
+  --color-white: #ffffff;
+  --color-off-white: #f5f5f5;
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #444444;
+  --color-text-muted: #6B7280;
+  --color-border: #E5E7EB;
+
+  --color-gradient-start: #0073BC;
+  --color-gradient-end: #5A9FC9;
+
+  --font-display: var(--font-inter), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+
+  --animate-blob: blob 7s infinite;
+  --animate-shimmer: shimmer 3s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+
+  @keyframes shimmer {
+    from { background-position: 200% 0; }
+    to { background-position: -200% 0; }
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .glass {
+    @apply bg-white/60 backdrop-blur-xl border border-white/40 shadow-xl;
+  }
+  .glass-dark {
+    @apply bg-[#001A2C]/60 backdrop-blur-xl border border-white/10 shadow-2xl;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

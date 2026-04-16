@@ -55,6 +55,19 @@ TDF Accounting（天德丰特许专业会计师事务所）现有网站基于 Wo
 
 > **实施要求**：通过 `next/font` 加载 Google Fonts，确保字体优化和防止 FOUT。
 
+### 1.5 AI 意向图对应表（`plan/` 目录）
+
+| Prompt | 对应页面 / 模块 | 已重命名图片 | 备注 |
+|------|------|------|------|
+| 1A | 首页全览（桌面端） | `prompt-01a-homepage-full-view.jpg` | 对应首页整体布局、Hero、三张浮卡与后续区块的综合参考图 |
+| 1B | 首页 Hero 区域特写 | `prompt-01b-homepage-hero-section.jpg` | 对应 `HeroSection` 的桌面端首屏视觉参考 |
+| 5A | 服务网格区（扩展版） | `prompt-05a-services-grid-overview.jpg` | 以 `ServicesGrid` 为主体，同时可作为 `/services` 服务总览页的扩展视觉参考 |
+| 10A | 关于我们页面全览 | `prompt-10a-about-page-full-view.jpg` | 对应 `/about` 页面整体结构参考 |
+| 11A | 服务详情页（Tax Services） | `prompt-11a-tax-services-detail-page.jpg` | 对应 `/services/tax` 模板及通用服务详情页参考 |
+| 12A | 联系我们页面 | `prompt-12a-contact-page.jpg` | 对应 `/contact` 页面表单、信息卡和地图布局 |
+| 13A | 移动端首页 | `prompt-13a-mobile-homepage.jpg` | 对应首页移动端排版与卡片堆叠方式 |
+| 14A | 博客列表页 | `prompt-14a-blog-listing-page.jpg` | 对应 `/blog` 列表页视觉参考 |
+
 ---
 
 ## 二、信息架构与路由

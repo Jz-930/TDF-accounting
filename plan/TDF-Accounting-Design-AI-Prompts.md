@@ -10,6 +10,8 @@
 
 ### Prompt 1A — 首页全览（桌面端）
 
+已匹配参考图：`prompt-01a-homepage-full-view.jpg`
+
 ```
 A high-fidelity web design mockup of a modern accounting firm homepage displayed on a large desktop monitor. Clean and professional layout. At the top, a thin contact info bar with phone number and email, followed by a sticky navigation bar with a logo on the left, menu items (Home, About Us, Our Services, Blog, Contact Us) in the center, and a bright blue gradient CTA button "Book Today" on the right. 
 
@@ -21,6 +23,8 @@ Color palette: primary blue #0073BC, accent cyan #3FC8F5, dark navy #002136, cle
 ```
 
 ### Prompt 1B — 首页 Hero 区域特写
+
+已匹配参考图：`prompt-01b-homepage-hero-section.jpg`
 
 ```
 A detailed web design mockup of a hero section for a professional accounting firm website. Split layout: left 60% contains text content — a small blue label "Welcome to TDF Accounting", a large bold headline "We Help To Grow Your Business" in near-black text (48-64px), a subtitle paragraph in gray, and two buttons side by side: a gradient blue-to-cyan rounded button "Book Today" and a white outlined button "Our Services". Right 40% features a high-quality professional photograph of a female Asian CPA and a male colleague having a business discussion in front of a modern glass office building, with the photo having a subtle rounded corner mask.
@@ -73,6 +77,9 @@ Clean modern professional design, accounting firm aesthetic, subtle geometric de
 ## 5. 服务网格区 (Services Grid)
 
 ### Prompt 5A — 2×2 服务卡片网格
+
+已匹配参考图：`prompt-05a-services-grid-overview.jpg`
+说明：该图以 2×2 服务卡片网格为主体，并向下扩展为服务总览页意向图。
 
 ```
 A web design mockup of a services section for a professional accounting firm website. Centered section heading: small blue text "What we do" with horizontal line decorations on both sides, and a large heading "Our Services" below.
@@ -148,6 +155,8 @@ Professional, clean dark footer design with subtle hover states visible on one l
 
 ### Prompt 10A — 关于我们页面全览
 
+已匹配参考图：`prompt-10a-about-page-full-view.jpg`
+
 ```
 A full-page web design mockup of an "About Us" page for a modern accounting firm. 
 
@@ -172,6 +181,8 @@ Clean modern professional design, blue color scheme, plenty of white space betwe
 
 ### Prompt 11A — 服务页面模板
 
+已匹配参考图：`prompt-11a-tax-services-detail-page.jpg`
+
 ```
 A full-page web design mockup of a service detail page for an accounting firm, specifically "Tax Services". 
 
@@ -192,6 +203,8 @@ Bottom: dark navy footer. Clean modern professional design. --ar 9:16 --v 6
 
 ### Prompt 12A — 联系页面
 
+已匹配参考图：`prompt-12a-contact-page.jpg`
+
 ```
 A full-page web design mockup of a "Contact Us" page for a professional accounting firm.
 
@@ -211,6 +224,8 @@ Bottom: dark navy footer. Clean, modern, professional design. --ar 9:16 --v 6
 ## 13. 移动端视图 (Mobile Views)
 
 ### Prompt 13A — 移动端首页
+
+已匹配参考图：`prompt-13a-mobile-homepage.jpg`
 
 ```
 A mobile phone mockup (iPhone 15 Pro frame) showing the mobile version of a professional accounting firm homepage. Portrait orientation.
@@ -237,6 +252,8 @@ Links are in large readable text (18px), dark color, with the active page highli
 ## 14. 博客页面 (Blog)
 
 ### Prompt 14A — 博客列表页
+
+已匹配参考图：`prompt-14a-blog-listing-page.jpg`
 
 ```
 A web design mockup of a blog listing page for a professional accounting firm website. 
