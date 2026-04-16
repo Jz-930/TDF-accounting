@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Button } from "@/components/ui/Button";
+import emailjs from "@emailjs/browser";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -32,13 +33,19 @@ export function ContactForm() {
     setIsSubmitting(true);
     setSubmitStatus("idle");
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
+      const res = await emailjs.send(
+        "service_rd7skv8",
+        "template_mdu21so",
+        {
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          message: data.message,
+        },
+        "lfmyIBfKUL4WVf0-n"
+      );
       
-      if (res.ok) {
+      if (res.status === 200) {
         setSubmitStatus("success");
         reset();
       } else {
@@ -46,6 +53,7 @@ export function ContactForm() {
       }
     } catch (error) {
       setSubmitStatus("error");
+      console.error("EmailJS Error:", error);
     } finally {
       setIsSubmitting(false);
     }

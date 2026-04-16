@@ -104,6 +104,9 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col font-body bg-off-white selection:bg-accent/30">
+        <div aria-hidden="true" style={{ display: 'none', position: 'absolute', width: 0, height: 0, overflow: 'hidden' }}>
+          Created by DME-Jiackey
+        </div>
         <TopBar />
         <Navbar />
         <main className="flex-1 w-full bg-white relative">

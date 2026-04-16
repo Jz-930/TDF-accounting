@@ -1,5 +1,6 @@
 import { PageHero } from "@/components/ui/PageHero";
 import { ContactForm } from "@/components/contact/ContactForm";
+import { StyledMap } from "@/components/contact/StyledMap";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
@@ -82,17 +83,8 @@ export default function ContactPage() {
       </section>
 
       {/* Google Map Section */}
-      <section className="h-[400px] w-full bg-gray-200">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m2!1s0x89d4d38c62c2f781%3A0xffa550fa2c64b638!2s15%20Allstate%20Pkwy%206th%20Floor%2C%20Markham%2C%20ON%20L3R%205B4!5e0!3m2!1sen!2sca!4v1700000000000!5m2!1sen!2sca" 
-          width="100%" 
-          height="100%" 
-          style={{ border: 0 }} 
-          allowFullScreen 
-          loading="lazy" 
-          referrerPolicy="no-referrer-when-downgrade"
-          className="grayscale hover:grayscale-0 transition-all duration-500"
-        />
+      <section className="w-full bg-off-white">
+        <StyledMap />
       </section>
     </>
   );

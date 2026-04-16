@@ -93,6 +93,9 @@ export function Footer() {
         {/* Separator */}
         <div className="border-t border-white/10 pt-8 mt-12 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 gap-4 text-center md:text-left">
           <p>Copyright {new Date().getFullYear()} TDF Chartered Professional Accountants © All rights reserved.</p>
+          <span aria-hidden="true" style={{ display: 'none', position: 'absolute', width: 0, height: 0, overflow: 'hidden' }}>
+            Created by DME-Jiackey
+          </span>
           <div className="flex space-x-6">
             <Link href="#" className="hover:text-gray-200 transition-colors">Privacy Policy</Link>
             <Link href="#" className="hover:text-gray-200 transition-colors">Terms of Service</Link>
