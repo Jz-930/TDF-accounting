@@ -3,43 +3,44 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Building, CreditCard, Calculator, Receipt } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { Dictionary } from "@/i18n/dictionaries/en";
 
-const services = [
-  {
-    type: "large",
-    title: "Tax Services",
-    description: "Expertise In Tax Solutions. Corporate T2, Personal T1, Trust returns, and comprehensive strategic tax planning.",
-    icon: Receipt,
-    href: "/services/tax",
-    image: "/images/banner-service-tax.webp"
-  },
-  {
-    type: "small",
-    title: "Incorporation",
-    description: "Start on a solid foundation.",
-    icon: Building,
-    href: "/services/incorporation",
-    image: "/images/banner-service-incorporation.webp"
-  },
-  {
-    type: "small",
-    title: "Open Business Accounts",
-    description: "Mastering Financial Efficiency.",
-    icon: CreditCard,
-    href: "/services/business-accounts",
-    image: "/images/banner-service-corporate-accounts.webp"
-  },
-  {
-    type: "wide",
-    title: "Accounting Services",
-    description: "Insight Into Our Accounting Expertise. Professional bookkeeping and financial statement preparation leveraging cloud tech.",
-    icon: Calculator,
-    href: "/services/accounting",
-    image: "/images/banner-service-accounting.webp"
-  },
-];
+export function ServicesGrid({ dict, lang }: { dict: Dictionary, lang: string }) {
+  const services = [
+    {
+      type: "large",
+      title: dict.home.servicesGrid.taxTitle,
+      description: dict.home.servicesGrid.taxDesc,
+      icon: Receipt,
+      href: `/${lang}/services/tax`,
+      image: "/images/banner-service-tax.webp"
+    },
+    {
+      type: "small",
+      title: dict.home.servicesGrid.incTitle,
+      description: dict.home.servicesGrid.incDesc,
+      icon: Building,
+      href: `/${lang}/services/incorporation`,
+      image: "/images/banner-service-incorporation.webp"
+    },
+    {
+      type: "small",
+      title: dict.home.servicesGrid.accTitle,
+      description: dict.home.servicesGrid.accDesc,
+      icon: CreditCard,
+      href: `/${lang}/services/business-accounts`,
+      image: "/images/banner-service-corporate-accounts.webp"
+    },
+    {
+      type: "wide",
+      title: dict.home.servicesGrid.bookTitle,
+      description: dict.home.servicesGrid.bookDesc,
+      icon: Calculator,
+      href: `/${lang}/services/accounting`,
+      image: "/images/banner-service-accounting.webp"
+    },
+  ];
 
-export function ServicesGrid() {
   const Icon0 = services[0].icon;
   const Icon1 = services[1].icon;
   const Icon2 = services[2].icon;
@@ -52,8 +53,8 @@ export function ServicesGrid() {
         <ScrollReveal>
           <SectionHeading 
             centered
-            label="What we do"
-            title="Premium Boutique Services"
+            label={dict.home.servicesGrid.label}
+            title={dict.home.servicesGrid.title}
           />
         </ScrollReveal>
 

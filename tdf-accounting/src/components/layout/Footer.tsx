@@ -2,8 +2,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
+import { Dictionary } from "@/i18n/dictionaries/en";
 
-export function Footer() {
+interface FooterProps {
+  dict: Dictionary;
+  lang: string;
+}
+
+export function Footer({ dict, lang }: FooterProps) {
   return (
     <footer className="bg-primary-dark pt-16 pb-8 text-white relative overflow-hidden">
       {/* Decorative background circle */}
@@ -14,11 +20,11 @@ export function Footer() {
         {/* CTA Banner */}
         <div className="bg-gradient-to-r from-primary to-accent rounded-2xl p-8 mb-16 flex flex-col md:flex-row items-center justify-between shadow-2xl">
           <div>
-            <h3 className="text-2xl font-bold mb-2">Ready to optimize your finances?</h3>
-            <p className="text-primary-dark/80 font-medium">Get expert advice tailored to your business needs.</p>
+            <h3 className="text-2xl font-bold mb-2">{dict.layout.footer.ctaTitle}</h3>
+            <p className="text-primary-dark/80 font-medium">{dict.layout.footer.ctaDesc}</p>
           </div>
           <Button variant="secondary" size="lg" className="mt-6 md:mt-0 font-bold" asChild>
-            <Link href="/contact">Book Free Consultation</Link>
+            <Link href={`/${lang}/contact`}>{dict.layout.footer.ctaBtn}</Link>
           </Button>
         </div>
 
@@ -27,14 +33,14 @@ export function Footer() {
           
           {/* Column 1 */}
           <div className="space-y-6">
-            <Link href="/" className="inline-block bg-white p-2 rounded-lg">
+            <Link href={`/${lang}`} className="inline-block bg-white p-2 rounded-lg">
               <Image src="/images/weblogo2.webp" alt="TDF Accounting" width={140} height={42} className="h-8 w-auto" />
             </Link>
             <p className="text-sm text-gray-300 leading-relaxed font-light">
-              TDF Accounting provides expert tax and financial planning services. Since 2015, we have been serving Markham with tailored solutions for small to medium-sized businesses.
+              {dict.layout.footer.aboutDesc}
             </p>
             <div className="flex space-x-4">
-              <Link href="/contact" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+              <Link href={`/${lang}/contact`} className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
                 <MessageCircle className="w-5 h-5 text-white" />
               </Link>
               <a href="mailto:info@tdfaccounting.com" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
@@ -45,44 +51,44 @@ export function Footer() {
 
           {/* Column 2 */}
           <div>
-            <h4 className="text-lg font-bold mb-6 text-white">Our Services</h4>
+            <h4 className="text-lg font-bold mb-6 text-white">{dict.layout.footer.servicesTitle}</h4>
             <ul className="space-y-4 text-sm text-gray-300">
-              <li><Link href="/services/incorporation" className="hover:text-accent transition-colors">Incorporation</Link></li>
-              <li><Link href="/services/business-accounts" className="hover:text-accent transition-colors">Open Business Accounts</Link></li>
-              <li><Link href="/services/accounting" className="hover:text-accent transition-colors">Accounting Services</Link></li>
-              <li><Link href="/services/tax" className="hover:text-accent transition-colors">Tax Services</Link></li>
+              <li><Link href={`/${lang}/services/incorporation`} className="hover:text-accent transition-colors">{dict.layout.navbar.servicesDropdown.incorporation}</Link></li>
+              <li><Link href={`/${lang}/services/business-accounts`} className="hover:text-accent transition-colors">{dict.layout.navbar.servicesDropdown.businessAccounts}</Link></li>
+              <li><Link href={`/${lang}/services/accounting`} className="hover:text-accent transition-colors">{dict.layout.navbar.servicesDropdown.accounting}</Link></li>
+              <li><Link href={`/${lang}/services/tax`} className="hover:text-accent transition-colors">{dict.layout.navbar.servicesDropdown.tax}</Link></li>
             </ul>
           </div>
 
           {/* Column 3 */}
           <div>
-            <h4 className="text-lg font-bold mb-6 text-white">Quick Links</h4>
+            <h4 className="text-lg font-bold mb-6 text-white">{dict.layout.footer.linksTitle}</h4>
             <ul className="space-y-4 text-sm text-gray-300">
-              <li><Link href="/" className="hover:text-accent transition-colors">Home</Link></li>
-              <li><Link href="/about" className="hover:text-accent transition-colors">About Us</Link></li>
-              <li><Link href="/blog" className="hover:text-accent transition-colors">Blog</Link></li>
-              <li><Link href="/contact" className="hover:text-accent transition-colors">Contact Us</Link></li>
+              <li><Link href={`/${lang}`} className="hover:text-accent transition-colors">{dict.layout.navbar.home}</Link></li>
+              <li><Link href={`/${lang}/about`} className="hover:text-accent transition-colors">{dict.layout.navbar.about}</Link></li>
+              <li><Link href={`/${lang}/blog`} className="hover:text-accent transition-colors">{dict.layout.navbar.blog}</Link></li>
+              <li><Link href={`/${lang}/contact`} className="hover:text-accent transition-colors">{dict.layout.navbar.contact}</Link></li>
             </ul>
           </div>
 
           {/* Column 4 */}
           <div>
-            <h4 className="text-lg font-bold mb-6 text-white">Contact Us</h4>
+            <h4 className="text-lg font-bold mb-6 text-white">{dict.layout.footer.contactTitle}</h4>
             <ul className="space-y-4 text-sm text-gray-300">
               <li className="flex items-start">
                 <MapPin className="w-5 h-5 mr-3 text-accent shrink-0 mt-0.5" />
-                <span>6F, 15 Allstate Parkway,<br />Markham, ON L3R 5B4</span>
+                <span>{dict.layout.topbar.address}</span>
               </li>
               <li>
                 <a href="tel:647-877-5996" className="flex items-center hover:text-accent transition-colors">
                   <Phone className="w-5 h-5 mr-3 text-accent shrink-0" />
-                  647-877-5996
+                  {dict.layout.topbar.phone}
                 </a>
               </li>
               <li>
                 <a href="mailto:info@tdfaccounting.com" className="flex items-center hover:text-accent transition-colors">
                   <Mail className="w-5 h-5 mr-3 text-accent shrink-0" />
-                  info@tdfaccounting.com
+                  {dict.layout.topbar.email}
                 </a>
               </li>
             </ul>
@@ -92,13 +98,13 @@ export function Footer() {
 
         {/* Separator */}
         <div className="border-t border-white/10 pt-8 mt-12 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 gap-4 text-center md:text-left">
-          <p>Copyright {new Date().getFullYear()} TDF Chartered Professional Accountants © All rights reserved.</p>
+          <p>{dict.layout.footer.copyright}</p>
           <span aria-hidden="true" style={{ display: 'none', position: 'absolute', width: 0, height: 0, overflow: 'hidden' }}>
             Created by DME-Jiackey
           </span>
           <div className="flex space-x-6">
-            <Link href="#" className="hover:text-gray-200 transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-gray-200 transition-colors">Terms of Service</Link>
+            <Link href="#" className="hover:text-gray-200 transition-colors">{dict.layout.footer.privacy}</Link>
+            <Link href="#" className="hover:text-gray-200 transition-colors">{dict.layout.footer.terms}</Link>
           </div>
         </div>
       </div>

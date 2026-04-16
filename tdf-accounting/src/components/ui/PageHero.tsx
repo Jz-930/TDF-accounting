@@ -1,5 +1,6 @@
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import Link from "next/link";
 
 interface PageHeroProps {
   title: string;
@@ -28,9 +29,9 @@ export function PageHero({ title, imagePath, breadcrumbs }: PageHeroProps) {
                 <span key={idx} className="flex items-center">
                   {idx > 0 && <span className="mx-2 text-gray-500">/</span>}
                   {crumb.href ? (
-                    <a href={crumb.href} className="hover:text-accent transition-colors">
+                    <Link href={crumb.href} className="hover:text-accent transition-colors">
                       {crumb.label}
-                    </a>
+                    </Link>
                   ) : (
                     <span className="text-white font-medium">{crumb.label}</span>
                   )}

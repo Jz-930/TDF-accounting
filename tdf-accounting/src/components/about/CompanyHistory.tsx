@@ -1,8 +1,9 @@
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import Image from "next/image";
+import { Dictionary } from "@/i18n/dictionaries/en";
 
-export function CompanyHistory() {
+export function CompanyHistory({ dict }: { dict: Dictionary }) {
   return (
     <section className="py-24 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -23,20 +24,20 @@ export function CompanyHistory() {
           <div className="lg:pl-8">
             <ScrollReveal>
               <SectionHeading 
-                label="About Our Firm"
-                title="A Legacy of Financial Excellence"
+                label={dict.about.history.label}
+                title={dict.about.history.title}
               />
             </ScrollReveal>
               
               <div className="prose prose-lg text-text-secondary">
                 <p className="mb-6">
-                  Founded in 2015, <strong className="text-primary font-semibold">TDF Chartered Professional Accountants</strong> has grown into a trusted partner for businesses across Markham and the Greater Toronto Area. We started with a simple belief: accounting should be more than just filing numbers; it should be about strategic growth.
+                  {dict.about.history.p1Part1}<strong className="text-primary font-semibold">{dict.about.history.p1Strong}</strong>{dict.about.history.p1Part2}
                 </p>
                 <p className="mb-6">
-                  As proud members of <strong className="text-primary font-semibold">CPA Ontario</strong>, we bring strict professional standards and innovative thinking to everything we do.
+                  {dict.about.history.p2Part1}<strong className="text-primary font-semibold">{dict.about.history.p2Strong}</strong>{dict.about.history.p2Part2}
                 </p>
                 <p>
-                  Today, we leverage <strong className="text-primary font-semibold">cloud-based technologies</strong> to provide real-time insights, allowing our clients to make informed decisions faster. We are not just your accountants; we are your financial navigators.
+                  {dict.about.history.p3Part1}<strong className="text-primary font-semibold">{dict.about.history.p3Strong}</strong>{dict.about.history.p3Part2}
                 </p>
               </div>
           </div>

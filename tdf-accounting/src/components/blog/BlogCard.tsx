@@ -9,12 +9,14 @@ interface BlogCardProps {
   category: string;
   imagePath: string;
   slug: string;
+  lang: string;
+  readMoreText: string;
 }
 
-export function BlogCard({ title, excerpt, date, category, imagePath, slug }: BlogCardProps) {
+export function BlogCard({ title, excerpt, date, category, imagePath, slug, lang, readMoreText }: BlogCardProps) {
   return (
     <Card className="h-full flex flex-col relative group border-gray-100 overflow-hidden">
-      <Link href={`/blog/${slug}`} className="block relative w-full aspect-[16/10] overflow-hidden">
+      <Link href={`/${lang}/blog/${slug}`} className="block relative w-full aspect-[16/10] overflow-hidden">
         <Image 
           src={imagePath} 
           alt={title} 
@@ -29,7 +31,7 @@ export function BlogCard({ title, excerpt, date, category, imagePath, slug }: Bl
       <div className="p-6 md:p-8 flex flex-col flex-1">
         <div className="text-sm text-text-muted mb-3 font-medium">{date}</div>
         
-        <Link href={`/blog/${slug}`}>
+        <Link href={`/${lang}/blog/${slug}`}>
           <h3 className="text-xl md:text-2xl font-bold text-text-primary mb-4 group-hover:text-primary transition-colors line-clamp-2">
             {title}
           </h3>
@@ -40,10 +42,10 @@ export function BlogCard({ title, excerpt, date, category, imagePath, slug }: Bl
         </p>
         
         <Link 
-          href={`/blog/${slug}`}
+          href={`/${lang}/blog/${slug}`}
           className="inline-flex items-center text-sm font-bold tracking-wide text-primary uppercase group-hover:text-accent transition-colors mt-auto w-fit"
         >
-          Read More <span className="ml-2 transform group-hover:translate-x-1 transition-transform">→</span>
+          {readMoreText} <span className="ml-2 transform group-hover:translate-x-1 transition-transform">→</span>
         </Link>
       </div>
     </Card>

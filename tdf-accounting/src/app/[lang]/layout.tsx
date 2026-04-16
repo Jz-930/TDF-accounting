@@ -3,7 +3,8 @@ import { Inter } from "next/font/google";
 import { TopBar } from "@/components/layout/TopBar";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import "./globals.css";
+import { getDictionary } from "@/i18n/get-dictionary";
+import "../globals.css";
 
 import Script from "next/script";
 
@@ -85,14 +86,16 @@ const jsonLd = {
   }
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+export default async function RootLayout(props: {
   children: React.ReactNode;
-}>) {
+  params: Promise<{ lang: string }>;
+}) {
+  const params = await props.params;
+  const dict = await getDictionary(params.lang);
+  
   return (
     <html
-      lang="en"
+      lang={params.lang}
       className={`${inter.variable} h-full antialiased smooth-scroll`}
     >
       <head>
@@ -107,12 +110,12 @@ export default function RootLayout({
         <div aria-hidden="true" style={{ display: 'none', position: 'absolute', width: 0, height: 0, overflow: 'hidden' }}>
           Created by DME-Jiackey
         </div>
-        <TopBar />
-        <Navbar />
+        <TopBar dict={dict} />
+        <Navbar dict={dict} lang={params.lang} />
         <main className="flex-1 w-full bg-white relative">
-          {children}
+          {props.children}
         </main>
-        <Footer />
+        <Footer dict={dict} lang={params.lang} />
       </body>
     </html>
   );

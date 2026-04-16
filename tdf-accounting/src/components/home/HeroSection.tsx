@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import Image from "next/image";
+import { Dictionary } from "@/i18n/dictionaries/en";
 
-export function HeroSection() {
+export function HeroSection({ dict, lang }: { dict: Dictionary, lang: string }) {
   return (
     <section className="relative min-h-[95vh] xl:min-h-[90vh] flex items-center justify-center overflow-hidden bg-primary-dark pt-20 pb-40 lg:pb-48 transition-all duration-500">
       
@@ -21,25 +22,25 @@ export function HeroSection() {
             <div className="inline-flex items-center gap-3 mb-8 bg-white/5 backdrop-blur-md border border-white/10 rounded-full px-4 py-2">
               <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
               <span className="text-white/90 font-medium tracking-wide text-sm uppercase">
-                Welcome to TDF Accounting
+                {dict.home.hero.welcome}
               </span>
             </div>
             
             <h1 className="text-5xl md:text-7xl 2xl:text-8xl font-bold text-white leading-[1.1] mb-8 tracking-tighter transition-all duration-500">
-              Strategic Insight to 
+              {dict.home.hero.titlePart1}
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-white bg-[length:200%_auto] animate-shimmer">
-                Grow Your Business
+                {dict.home.hero.titlePart2}
               </span>
             </h1>
             
             <p className="text-xl 2xl:text-2xl text-white/70 mb-12 max-w-xl 2xl:max-w-2xl leading-relaxed font-light transition-all duration-500">
-              Serving Markham and beyond with expert corporate tax, precise bookkeeping, and holistic financial architecture tailored for ambitious enterprises.
+              {dict.home.hero.description}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto">
               <Button size="lg" variant="gradient" className="text-lg 2xl:text-xl px-8 2xl:px-10 h-14 2xl:h-16 shadow-[0_0_40px_rgba(90,159,201,0.4)] hover:shadow-[0_0_60px_rgba(90,159,201,0.6)]" asChild>
-                <Link href="/contact">Book Strategy Session</Link>
+                <Link href={`/${lang}/contact`}>{dict.home.hero.cta}</Link>
               </Button>
             </div>
           </div>
@@ -61,11 +62,11 @@ export function HeroSection() {
               {/* Top Badge */}
               <div className="absolute top-6 left-6 glass-dark p-4 rounded-xl flex items-center gap-4 border border-white/10">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-inner">
-                  <span className="text-white font-bold text-xl">15+</span>
+                  <span className="text-white font-bold text-xl">{dict.home.hero.yearsNum}</span>
                 </div>
                 <div>
-                  <p className="font-bold text-white text-sm tracking-wide">Years Experience</p>
-                  <p className="text-xs text-accent font-medium mt-0.5">CPA Ontario</p>
+                  <p className="font-bold text-white text-sm tracking-wide">{dict.home.hero.yearsText}</p>
+                  <p className="text-xs text-accent font-medium mt-0.5">{dict.home.hero.cpa}</p>
                 </div>
               </div>
 

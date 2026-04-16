@@ -2,22 +2,28 @@ import { PageHero } from "@/components/ui/PageHero";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { StyledMap } from "@/components/contact/StyledMap";
 import { MapPin, Phone, Mail } from "lucide-react";
-import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { getDictionary } from "@/i18n/get-dictionary";
 
-export const metadata = {
-  title: 'Contact Us',
-  description: 'Get in touch with TDF Accounting. We are here to help you with your tax planning and accounting needs.',
-};
+export async function generateMetadata(props: { params: Promise<{ lang: string }> }) {
+  const params = await props.params;
+  const dict = await getDictionary(params.lang);
+  return {
+    title: dict.contact.title,
+  };
+}
 
-export default function ContactPage() {
+export default async function ContactPage(props: { params: Promise<{ lang: string }> }) {
+  const params = await props.params;
+  const dict = await getDictionary(params.lang);
+
   return (
     <>
       <PageHero 
-        title="Contact Us"
+        title={dict.contact.title}
         imagePath="/images/banner-contact.webp"
         breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Contact Us" }
+          { label: dict.layout.navbar.home, href: `/${params.lang}` },
+          { label: dict.contact.title }
         ]}
       />
       
@@ -25,7 +31,7 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 lg:gap-8 items-start">
             <div className="w-full">
-              <ContactForm />
+              <ContactForm dict={dict} />
             </div>
 
             <div className="h-full w-full">
@@ -35,7 +41,7 @@ export default function ContactPage() {
                 <div className="absolute bottom-0 left-0 w-48 h-48 bg-primary-dark/30 rounded-full blur-2xl translate-y-1/2 -translate-x-1/4" />
                 
                 <div className="relative z-10">
-                  <h3 className="text-2xl font-bold mb-10">Contact Info</h3>
+                  <h3 className="text-2xl font-bold mb-10">{dict.contact.infoTitle}</h3>
                   
                   <div className="space-y-10">
                     <div className="flex items-start group">
@@ -43,10 +49,8 @@ export default function ContactPage() {
                         <MapPin className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <p className="font-semibold mb-1 text-lg">Our Location</p>
-                        <p className="text-white/80 leading-relaxed">
-                          6F, 15 Allstate Parkway,<br />Markham, ON L3R 5B4
-                        </p>
+                        <p className="font-semibold mb-1 text-lg">{dict.contact.locationLabel}</p>
+                        <p className="text-white/80 leading-relaxed" dangerouslySetInnerHTML={{ __html: dict.contact.locationValue }} />
                       </div>
                     </div>
 
@@ -55,7 +59,7 @@ export default function ContactPage() {
                         <Phone className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <p className="font-semibold mb-1 text-lg">Phone Number</p>
+                        <p className="font-semibold mb-1 text-lg">{dict.contact.phoneLabel}</p>
                         <a href="tel:647-877-5996" className="text-white/80 hover:text-accent transition-colors block">
                           647-877-5996
                         </a>
@@ -67,7 +71,7 @@ export default function ContactPage() {
                         <Mail className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <p className="font-semibold mb-1 text-lg">Email Address</p>
+                        <p className="font-semibold mb-1 text-lg">{dict.contact.emailLabel}</p>
                         <a href="mailto:info@tdfaccounting.com" className="text-white/80 hover:text-accent transition-colors block break-all">
                           info@tdfaccounting.com
                         </a>

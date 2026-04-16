@@ -2,9 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Share2, Link as LinkIcon, Mail } from "lucide-react";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { getDictionary } from "@/i18n/get-dictionary";
 
 // This is a dummy page for demonstration.
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
+export default async function BlogPostPage(props: { params: Promise<{ lang: string; slug: string }> }) {
+  const params = await props.params;
+  const dict = await getDictionary(params.lang);
   // In a real app, fetch post data based on params.slug
 
   return (
@@ -12,21 +15,21 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <ScrollReveal>
-          <Link href="/blog" className="inline-flex items-center text-primary font-medium hover:text-primary-dark transition-colors mb-8 group">
+          <Link href={`/${params.lang}/blog`} className="inline-flex items-center text-primary font-medium hover:text-primary-dark transition-colors mb-8 group">
             <ArrowLeft className="w-4 h-4 mr-2 transform group-hover:-translate-x-1 transition-transform" />
-            Back to Blog
+            {dict.blog.backToBlog}
           </Link>
 
           <div className="mb-8 flex items-center space-x-4">
             <span className="bg-primary/10 text-primary px-3 py-1 text-sm font-semibold rounded-full">
-              Tax Tips
+              {dict.blog.dummyPosts[0].category}
             </span>
             <span className="text-text-muted text-sm font-medium">November 15, 2025</span>
-            <span className="text-text-muted text-sm font-medium">• 5 min read</span>
+            <span className="text-text-muted text-sm font-medium">• 5 {dict.blog.minRead}</span>
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary mb-12 leading-tight">
-            Essential Year-End Tax Strategies for Small Businesses
+            {dict.blog.dummyPosts[0].title}
           </h1>
         </ScrollReveal>
 
@@ -65,9 +68,9 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             </p>
 
             <div className="bg-off-white p-8 rounded-2xl border border-gray-100 my-10">
-              <h4 className="text-xl font-bold text-primary mb-4">Need help with your corporate taxes?</h4>
+              <h4 className="text-xl font-bold text-primary mb-4">{dict.blog.helpTitle}</h4>
               <p className="mb-0 text-base">
-                TDF Accounting specializes in comprehensive corporate tax planning. Contact us today to schedule your year-end tax review before the deadline.
+                {dict.blog.helpDesc}
               </p>
             </div>
             
@@ -78,7 +81,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
           <div className="mt-16 pt-8 border-t border-gray-100 flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <span className="font-semibold text-text-primary">Share this post:</span>
+              <span className="font-semibold text-text-primary">{dict.blog.sharePost}</span>
               <button className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors">
                 <LinkIcon className="w-4 h-4" />
               </button>

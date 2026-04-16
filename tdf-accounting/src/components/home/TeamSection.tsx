@@ -2,8 +2,9 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import Image from "next/image";
 import { Mail } from "lucide-react";
+import { Dictionary } from "@/i18n/dictionaries/en";
 
-export function TeamSection() {
+export function TeamSection({ dict, lang }: { dict: Dictionary, lang: string }) {
   return (
     <section className="py-24 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -11,8 +12,8 @@ export function TeamSection() {
         <ScrollReveal>
           <SectionHeading 
             centered
-            label="Our Team"
-            title="Our Leadership"
+            label={dict.home.team.label}
+            title={dict.home.team.title}
           />
         </ScrollReveal>
 
@@ -37,22 +38,22 @@ export function TeamSection() {
               {/* Info Area */}
               <div className="w-full md:w-3/5 p-8 md:p-12 flex flex-col justify-center">
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-3xl font-bold text-text-primary">Jing Li</h3>
+                  <h3 className="text-3xl font-bold text-text-primary">{dict.home.team.name}</h3>
                   <a href="mailto:info@tdfaccounting.com" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-primary">
                     <Mail className="w-5 h-5" />
                   </a>
                 </div>
                 
                 <p className="text-accent font-semibold tracking-wide uppercase text-sm mb-6">
-                  Partner, Founder | CPA, MBA
+                  {dict.home.team.role}
                 </p>
                 
                 <div className="prose prose-gray">
                   <p className="mb-4 text-text-secondary leading-relaxed">
-                    Jing Li brings over a decade of extensive experience in corporate taxation, business consulting, and financial accounting. She has a proven track record of helping businesses streamline their financial operations and maximize tax efficiencies.
+                    {dict.home.team.p1}
                   </p>
                   <p className="text-text-secondary leading-relaxed">
-                    Prior to establishing TDF Accounting, Jing gained invaluable expertise working for top-tier accounting firms, cultivating a deep understanding of complex tax regulations across multiple industries. Her mission is to deliver large-firm expertise with boutique-level personalized service.
+                    {dict.home.team.p2}
                   </p>
                 </div>
               </div>

@@ -1,13 +1,14 @@
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { Dictionary } from "@/i18n/dictionaries/en";
 
-const stats = [
-  { value: 1500, suffix: "+", label: "Successful Projects" },
-  { value: 50, suffix: "+", label: "Team Members" },
-  { value: 250, suffix: "+", label: "Happy Clients" },
-];
+export function StatsCounter({ dict }: { dict: Dictionary }) {
+  const stats = [
+    { value: 1500, suffix: "+", label: dict.about.stats.projects },
+    { value: 50, suffix: "+", label: dict.about.stats.team },
+    { value: 250, suffix: "+", label: dict.about.stats.clients },
+  ];
 
-export function StatsCounter() {
   return (
     <section className="py-20 bg-primary-dark relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

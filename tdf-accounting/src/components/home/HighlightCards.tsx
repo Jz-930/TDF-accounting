@@ -2,29 +2,30 @@ import { Card } from "@/components/ui/Card";
 import { Building2, Briefcase, FileText } from "lucide-react";
 import Link from "next/link";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { Dictionary } from "@/i18n/dictionaries/en";
 
-const highlights = [
-  {
-    title: "Our Company",
-    description: "Learn about our extensive history serving the Markham community and beyond since 2015.",
-    icon: Building2,
-    link: "/about"
-  },
-  {
-    title: "Our Services",
-    description: "From corporate tax to incorporation, we provide holistic business solutions.",
-    icon: Briefcase,
-    link: "/services/tax"
-  },
-  {
-    title: "Get a Free Quote",
-    description: "Contact us today for a complimentary assessment of your financial health.",
-    icon: FileText,
-    link: "/contact"
-  }
-];
+export function HighlightCards({ dict, lang }: { dict: Dictionary, lang: string }) {
+  const highlights = [
+    {
+      title: dict.home.highlights.card1Title,
+      description: dict.home.highlights.card1Desc,
+      icon: Building2,
+      link: `/${lang}/about`
+    },
+    {
+      title: dict.home.highlights.card2Title,
+      description: dict.home.highlights.card2Desc,
+      icon: Briefcase,
+      link: `/${lang}/services/tax`
+    },
+    {
+      title: dict.home.highlights.card3Title,
+      description: dict.home.highlights.card3Desc,
+      icon: FileText,
+      link: `/${lang}/contact`
+    }
+  ];
 
-export function HighlightCards() {
   return (
     <section className="relative z-30 pb-20 -mt-8 md:-mt-16 lg:-mt-24">
       <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-300">
@@ -49,7 +50,7 @@ export function HighlightCards() {
                   className="relative z-10 inline-flex items-center text-sm font-bold tracking-wide text-primary uppercase group-hover:text-accent transition-colors mt-auto w-fit"
                 >
                   <span className="relative">
-                    Read More
+                    {dict.home.highlights.readMore}
                     <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-accent group-hover:w-full transition-all duration-300" />
                   </span>
                   <span className="ml-2 transform group-hover:translate-x-2 transition-transform duration-300">→</span>

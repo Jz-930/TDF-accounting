@@ -8,19 +8,25 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Menu, X, Building, CreditCard, Calculator, Receipt, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
+import { Dictionary } from "@/i18n/dictionaries/en";
 
-const services = [
-  { name: "Incorporation", href: "/services/incorporation", icon: Building },
-  { name: "Open Business Accounts", href: "/services/business-accounts", icon: CreditCard },
-  { name: "Accounting Services", href: "/services/accounting", icon: Calculator },
-  { name: "Tax Services", href: "/services/tax", icon: Receipt },
-];
+interface NavbarProps {
+  dict: Dictionary;
+  lang: string;
+}
 
-export function Navbar() {
+export function Navbar({ dict, lang }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesExpanded, setServicesExpanded] = useState(false);
   const pathname = usePathname();
+
+  const services = [
+    { name: dict.layout.navbar.servicesDropdown.incorporation, href: `/${lang}/services/incorporation`, icon: Building },
+    { name: dict.layout.navbar.servicesDropdown.businessAccounts, href: `/${lang}/services/business-accounts`, icon: CreditCard },
+    { name: dict.layout.navbar.servicesDropdown.accounting, href: `/${lang}/services/accounting`, icon: Calculator },
+    { name: dict.layout.navbar.servicesDropdown.tax, href: `/${lang}/services/tax`, icon: Receipt },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,7 +52,7 @@ export function Navbar() {
               Created by DME-Jiackey
             </div>
             {/* Logo */}
-            <Link href="/" className="flex-shrink-0 flex items-center">
+            <Link href={`/${lang}`} className="flex-shrink-0 flex items-center">
               <Image
                 src="/images/weblogo2.webp"
                 alt="TDF Accounting"
@@ -59,17 +65,17 @@ export function Navbar() {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-8 items-center">
-              <Link href="/" className={cn("text-sm font-medium transition-colors hover:text-primary", pathname === "/" ? "text-primary" : "text-text-primary")}>
-                Home
+              <Link href={`/${lang}`} className={cn("text-sm font-medium transition-colors hover:text-primary", pathname === `/${lang}` ? "text-primary" : "text-text-primary")}>
+                {dict.layout.navbar.home}
               </Link>
-              <Link href="/about" className={cn("text-sm font-medium transition-colors hover:text-primary", isActive("/about") ? "text-primary" : "text-text-primary")}>
-                About Us
+              <Link href={`/${lang}/about`} className={cn("text-sm font-medium transition-colors hover:text-primary", isActive(`/${lang}/about`) ? "text-primary" : "text-text-primary")}>
+                {dict.layout.navbar.about}
               </Link>
               
               {/* Dropdown menu */}
               <div className="relative group">
-                <button className={cn("flex items-center text-sm font-medium transition-colors hover:text-primary", isActive("/services") ? "text-primary" : "text-text-primary")}>
-                  Our Services <ChevronDown className="w-4 h-4 ml-1" />
+                <button className={cn("flex items-center text-sm font-medium transition-colors hover:text-primary", isActive(`/${lang}/services`) ? "text-primary" : "text-text-primary")}>
+                  {dict.layout.navbar.services} <ChevronDown className="w-4 h-4 ml-1" />
                 </button>
                 <div className="absolute top-full left-0 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <div className="w-64 bg-white rounded-xl shadow-xl ring-1 ring-black/5 p-2 flex flex-col gap-1">
@@ -87,18 +93,18 @@ export function Navbar() {
                 </div>
               </div>
 
-              <Link href="/blog" className={cn("text-sm font-medium transition-colors hover:text-primary", isActive("/blog") ? "text-primary" : "text-text-primary")}>
-                Blog
+              <Link href={`/${lang}/blog`} className={cn("text-sm font-medium transition-colors hover:text-primary", isActive(`/${lang}/blog`) ? "text-primary" : "text-text-primary")}>
+                {dict.layout.navbar.blog}
               </Link>
-              <Link href="/contact" className={cn("text-sm font-medium transition-colors hover:text-primary", isActive("/contact") ? "text-primary" : "text-text-primary")}>
-                Contact Us
+              <Link href={`/${lang}/contact`} className={cn("text-sm font-medium transition-colors hover:text-primary", isActive(`/${lang}/contact`) ? "text-primary" : "text-text-primary")}>
+                {dict.layout.navbar.contact}
               </Link>
             </nav>
 
             {/* Desktop CTA */}
             <div className="hidden md:flex items-center">
               <Button variant="gradient" asChild>
-                <Link href="/contact">Book Today</Link>
+                <Link href={`/${lang}/contact`}>{dict.layout.navbar.book}</Link>
               </Button>
             </div>
 
@@ -141,15 +147,15 @@ export function Navbar() {
               </div>
 
               <div className="px-6 flex flex-col space-y-3 flex-grow">
-                <Link onClick={() => setMobileMenuOpen(false)} href="/" className="px-4 py-3.5 text-lg font-medium rounded-xl hover:bg-primary/5 hover:text-primary transition-colors">Home</Link>
-                <Link onClick={() => setMobileMenuOpen(false)} href="/about" className="px-4 py-3.5 text-lg font-medium rounded-xl hover:bg-primary/5 hover:text-primary transition-colors">About Us</Link>
+                <Link onClick={() => setMobileMenuOpen(false)} href={`/${lang}`} className="px-4 py-3.5 text-lg font-medium rounded-xl hover:bg-primary/5 hover:text-primary transition-colors">{dict.layout.navbar.home}</Link>
+                <Link onClick={() => setMobileMenuOpen(false)} href={`/${lang}/about`} className="px-4 py-3.5 text-lg font-medium rounded-xl hover:bg-primary/5 hover:text-primary transition-colors">{dict.layout.navbar.about}</Link>
                 
                 <div className="border-y border-gray-100/50 my-2 py-2">
                   <button 
                     onClick={() => setServicesExpanded(!servicesExpanded)} 
                     className="w-full flex items-center justify-between px-4 py-3.5 text-lg font-medium hover:bg-primary/5 rounded-xl transition-colors"
                   >
-                    Our Services
+                    {dict.layout.navbar.services}
                     <ChevronDown className={cn("w-5 h-5 transition-transform", servicesExpanded && "rotate-180")} />
                   </button>
                   <AnimatePresence>
@@ -178,17 +184,17 @@ export function Navbar() {
                   </AnimatePresence>
                 </div>
 
-                <Link onClick={() => setMobileMenuOpen(false)} href="/blog" className="px-4 py-3.5 text-lg font-medium rounded-xl hover:bg-primary/5 hover:text-primary transition-colors">Blog</Link>
-                <Link onClick={() => setMobileMenuOpen(false)} href="/contact" className="px-4 py-3.5 text-lg font-medium rounded-xl hover:bg-primary/5 hover:text-primary transition-colors">Contact Us</Link>
+                <Link onClick={() => setMobileMenuOpen(false)} href={`/${lang}/blog`} className="px-4 py-3.5 text-lg font-medium rounded-xl hover:bg-primary/5 hover:text-primary transition-colors">{dict.layout.navbar.blog}</Link>
+                <Link onClick={() => setMobileMenuOpen(false)} href={`/${lang}/contact`} className="px-4 py-3.5 text-lg font-medium rounded-xl hover:bg-primary/5 hover:text-primary transition-colors">{dict.layout.navbar.contact}</Link>
               </div>
 
               <div className="px-8 mt-10">
                 <Button variant="gradient" className="w-full py-6 text-lg shadow-lg shadow-primary/20" asChild onClick={() => setMobileMenuOpen(false)}>
-                  <Link href="/contact">Book Today</Link>
+                  <Link href={`/${lang}/contact`}>{dict.layout.navbar.book}</Link>
                 </Button>
                 <div className="mt-8 pt-6 border-t border-gray-100 flex flex-col space-y-3 px-2 text-sm text-text-secondary">
-                  <div className="flex items-center"><Phone className="w-4 h-4 mr-3 text-primary"/> 647-877-5996</div>
-                  <div className="flex items-center"><Mail className="w-4 h-4 mr-3 text-primary"/> info@tdfaccounting.com</div>
+                  <div className="flex items-center"><Phone className="w-4 h-4 mr-3 text-primary"/> {dict.layout.topbar.phone}</div>
+                  <div className="flex items-center"><Mail className="w-4 h-4 mr-3 text-primary"/> {dict.layout.topbar.email}</div>
                 </div>
               </div>
             </motion.div>
