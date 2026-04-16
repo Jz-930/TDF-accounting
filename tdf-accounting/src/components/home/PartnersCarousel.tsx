@@ -4,10 +4,10 @@ import Image from "next/image";
 
 // TDF Partners/Brands from original site
 const partners = [
-  { name: "Brand 1", src: "/images/brand1.jpg" },
-  { name: "Brand 2", src: "/images/Brand2.jpg" },
-  { name: "Brand 4", src: "/images/brand4.jpg" },
-  { name: "Brand 6", src: "/images/Brad6.jpg" },
+  { name: "Brand 1", src: "/images/brand1.webp" },
+  { name: "Brand 2", src: "/images/Brand2.webp" },
+  { name: "Brand 4", src: "/images/brand4.webp" },
+  { name: "Brand 6", src: "/images/Brad6.webp" },
 ];
 
 export function PartnersCarousel() {

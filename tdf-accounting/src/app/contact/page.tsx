@@ -13,7 +13,7 @@ export default function ContactPage() {
     <>
       <PageHero 
         title="Contact Us"
-        imagePath="/images/banner-contact.jpg"
+        imagePath="/images/banner-contact.webp"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Contact Us" }

@@ -27,10 +27,10 @@ export function TestimonialsSlider() {
   return (
     <section className="py-24 bg-primary-dark relative overflow-hidden">
       {/* Background decorations */}
-      <div className="absolute inset-0 bg-[url('/images/Contact-bg.jpg')] bg-cover bg-center opacity-10 mix-blend-overlay" />
+      <div className="absolute inset-0 bg-[url('/images/Contact-bg.webp')] bg-cover bg-center opacity-10 mix-blend-overlay" />
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/20 xl:from-primary/10 to-transparent" />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 transition-all duration-300">
         <ScrollReveal>
           <SectionHeading 
             centered
@@ -40,11 +40,11 @@ export function TestimonialsSlider() {
           />
         </ScrollReveal>
 
-        <div className="mt-16 flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 md:grid md:grid-cols-3 md:overflow-visible md:snap-none hide-scrollbar">
+        <div className="mt-16 flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 md:grid md:grid-cols-3 md:overflow-visible md:snap-none [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:none]">
           {testimonials.map((t, i) => (
             <div 
               key={t.name} 
-              className="snap-center shrink-0 w-[85vw] md:w-auto"
+              className="snap-center shrink-0 w-[85vw] sm:w-[60vw] md:w-auto"
             >
               <div className="bg-white rounded-2xl p-8 shadow-xl relative h-full flex flex-col group">
                 <Quote className="w-12 h-12 text-primary/10 absolute top-6 right-6 group-hover:text-primary/20 transition-colors duration-300" />

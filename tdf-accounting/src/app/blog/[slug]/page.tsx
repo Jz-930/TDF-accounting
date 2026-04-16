@@ -32,7 +32,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
         <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden mb-16 shadow-lg">
           <Image 
-            src="/images/hero-home.jpg" 
+            src="/images/hero-home.webp" 
             alt="Business tax planning" 
             fill
             className="object-cover"

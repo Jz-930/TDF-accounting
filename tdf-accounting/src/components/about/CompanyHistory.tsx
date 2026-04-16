@@ -11,7 +11,7 @@ export function CompanyHistory() {
           <div className="relative h-full min-h-[400px]">
               <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
                 <Image 
-                  src="/images/blog-cover-teamwork.jpg" 
+                  src="/images/blog-cover-teamwork.webp" 
                   alt="TDF Company History" 
                   fill
                   className="object-cover"

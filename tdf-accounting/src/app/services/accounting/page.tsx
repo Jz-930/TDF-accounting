@@ -13,7 +13,7 @@ export default function AccountingPage() {
     <>
       <PageHero 
         title="Accounting Services"
-        imagePath="/images/banner-service-accounting.jpg"
+        imagePath="/images/banner-service-accounting.webp"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Our Services" },
@@ -26,7 +26,7 @@ export default function AccountingPage() {
       </ServiceIntro>
 
       <ServiceDetail 
-        imagePath="/images/bookkeping-banner-pic.jpg"
+        imagePath="/images/bookkeping-banner-pic.webp"
         content={
           <>
             <p>

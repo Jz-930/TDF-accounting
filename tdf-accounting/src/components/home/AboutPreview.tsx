@@ -20,7 +20,7 @@ export function AboutPreview() {
             {/* Primary Large Image */}
             <div className="col-span-2 relative aspect-[16/9] rounded-[2rem] overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.8)] border border-white/10 group">
               <Image 
-                src="/images/about-preview.jpg" 
+                src="/images/about-preview.webp" 
                 alt="TDF Accounting Office" 
                 fill
                 className="object-cover scale-100 group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
@@ -31,7 +31,7 @@ export function AboutPreview() {
             {/* Secondary Image: Team */}
             <div className="col-span-1 relative aspect-square rounded-3xl overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.8)] border border-white/10 group mt-4">
               <Image 
-                src="/images/Slider-img1.jpg" 
+                src="/images/Slider-img1.webp" 
                 alt="Our Team" 
                 fill
                 className="object-cover scale-100 group-hover:scale-105 transition-transform duration-1000"

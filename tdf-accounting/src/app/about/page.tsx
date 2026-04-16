@@ -14,7 +14,7 @@ export default function AboutPage() {
     <>
       <PageHero 
         title="About Us"
-        imagePath="/images/banner-about.jpg"
+        imagePath="/images/banner-about.webp"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "About Us" }

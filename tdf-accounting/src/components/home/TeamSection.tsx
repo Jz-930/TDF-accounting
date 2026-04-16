@@ -26,7 +26,7 @@ export function TeamSection() {
               {/* Photo Area */}
               <div className="w-full md:w-2/5 relative aspect-square md:aspect-[3/4]">
                 <Image 
-                  src="/images/Jing-Li.jpg" 
+                  src="/images/Jing-Li.webp" 
                   alt="Jing Li, CPA, MBA" 
                   fill
                   className="object-cover object-top"

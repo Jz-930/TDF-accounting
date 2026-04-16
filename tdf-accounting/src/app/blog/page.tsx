@@ -15,7 +15,7 @@ const DUMMY_POSTS = [
     excerpt: "Maximize your deductions and prepare your business for the upcoming tax season with these essential year-end strategies.",
     date: "November 15, 2025",
     category: "Tax Tips",
-    imagePath: "/images/hero-home.jpg"
+    imagePath: "/images/hero-home.webp"
   },
   {
     slug: "benefits-of-incorporation",
@@ -23,7 +23,7 @@ const DUMMY_POSTS = [
     excerpt: "Understanding the tax implications, liability protection, and long-term advantages of moving from a sole proprietorship to a corporation.",
     date: "October 22, 2025",
     category: "Incorporation",
-    imagePath: "/images/blog-cover-consultation.jpg"
+    imagePath: "/images/blog-cover-consultation.webp"
   },
   {
     slug: "cloud-accounting-transition",
@@ -31,7 +31,7 @@ const DUMMY_POSTS = [
     excerpt: "Discover how migrating to modern cloud-based accounting platforms can save your business time, money, and reduce data entry errors.",
     date: "September 08, 2025",
     category: "Tech & Finance",
-    imagePath: "/images/cash-management-banner-pic.jpg"
+    imagePath: "/images/cash-management-banner-pic.webp"
   }
 ];
 
@@ -40,7 +40,7 @@ export default function BlogPage() {
     <>
       <PageHero 
         title="Blog & Insights"
-        imagePath="/images/banner-blog.jpg"
+        imagePath="/images/banner-blog.webp"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Blog" }

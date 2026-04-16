@@ -13,7 +13,7 @@ export default function BusinessAccountsPage() {
     <>
       <PageHero 
         title="Open Business Accounts"
-        imagePath="/images/banner-service-corporate-accounts.jpg"
+        imagePath="/images/banner-service-corporate-accounts.webp"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Our Services" },
@@ -26,7 +26,7 @@ export default function BusinessAccountsPage() {
       </ServiceIntro>
 
       <ServiceDetail 
-        imagePath="/images/Advisory-pic.jpg"
+        imagePath="/images/Advisory-pic.webp"
         imageOnLeft={false}
         content={
           <>

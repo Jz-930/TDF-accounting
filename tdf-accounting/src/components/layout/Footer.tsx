@@ -9,7 +9,7 @@ export function Footer() {
       {/* Decorative background circle */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-6 sm:px-8 relative z-10 transition-all duration-500">
         
         {/* CTA Banner */}
         <div className="bg-gradient-to-r from-primary to-accent rounded-2xl p-8 mb-16 flex flex-col md:flex-row items-center justify-between shadow-2xl">
@@ -23,12 +23,12 @@ export function Footer() {
         </div>
 
         {/* Footer Links Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 mb-12">
           
           {/* Column 1 */}
           <div className="space-y-6">
             <Link href="/" className="inline-block bg-white p-2 rounded-lg">
-              <Image src="/images/weblogo2.png" alt="TDF Accounting" width={140} height={42} className="h-8 w-auto" />
+              <Image src="/images/weblogo2.webp" alt="TDF Accounting" width={140} height={42} className="h-8 w-auto" />
             </Link>
             <p className="text-sm text-gray-300 leading-relaxed font-light">
               TDF Accounting provides expert tax and financial planning services. Since 2015, we have been serving Markham with tailored solutions for small to medium-sized businesses.
@@ -91,11 +91,11 @@ export function Footer() {
         </div>
 
         {/* Separator */}
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-          <p>Copyright {new Date().getFullYear()} TDF Chartered Professional Accountants, Professional Corporation © All rights reserved.</p>
-          <div className="mt-4 md:mt-0 space-x-6">
-            <Link href="#" className="hover:text-gray-200">Privacy Policy</Link>
-            <Link href="#" className="hover:text-gray-200">Terms of Service</Link>
+        <div className="border-t border-white/10 pt-8 mt-12 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 gap-4 text-center md:text-left">
+          <p>Copyright {new Date().getFullYear()} TDF Chartered Professional Accountants © All rights reserved.</p>
+          <div className="flex space-x-6">
+            <Link href="#" className="hover:text-gray-200 transition-colors">Privacy Policy</Link>
+            <Link href="#" className="hover:text-gray-200 transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

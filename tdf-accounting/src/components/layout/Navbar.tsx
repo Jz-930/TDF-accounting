@@ -35,16 +35,16 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 transition-all duration-300 w-full",
-        isScrolled ? "bg-white/95 backdrop-blur-md shadow-sm" : "bg-white"
+        "sticky top-0 z-50 transition-all duration-500 w-full",
+        isScrolled ? "bg-white/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.03)] border-b border-white/20" : "bg-white/95 backdrop-blur-md"
       )}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+      <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-500">
+        <div className="flex justify-between items-center h-20 2xl:h-24">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0 flex items-center">
             <Image
-              src="/images/weblogo2.png"
+              src="/images/weblogo2.webp"
               alt="TDF Accounting"
               width={160}
               height={48}
@@ -117,30 +117,30 @@ export function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-black/50"
+            className="fixed inset-0 z-[100] bg-black/40 backdrop-blur-sm"
           >
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ type: "spring", bounce: 0, duration: 0.4 }}
-              className="absolute right-0 top-0 bottom-0 w-[80%] max-w-sm bg-white shadow-2xl flex flex-col pt-6 pb-8 overflow-y-auto"
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              className="absolute right-0 top-0 bottom-0 w-[85%] max-w-sm bg-white/95 backdrop-blur-2xl shadow-2xl flex flex-col pt-6 pb-8 overflow-y-auto border-l border-white/50"
             >
               <div className="px-6 flex items-center justify-between mb-8">
-                <Image src="/images/weblogo2.png" alt="TDF Logo" width={120} height={40} className="w-auto h-8" />
-                <button onClick={() => setMobileMenuOpen(false)} className="text-gray-500 hover:text-primary p-2">
+                <Image src="/images/weblogo2.webp" alt="TDF Logo" width={140} height={42} className="w-auto h-9" />
+                <button onClick={() => setMobileMenuOpen(false)} className="text-gray-500 hover:text-primary p-2 bg-gray-100/50 rounded-full transition-colors">
                   <X className="h-6 w-6" />
                 </button>
               </div>
 
-              <div className="px-4 flex flex-col space-y-2 flex-grow">
-                <Link onClick={() => setMobileMenuOpen(false)} href="/" className="px-4 py-3 text-base font-medium rounded-lg hover:bg-gray-50">Home</Link>
-                <Link onClick={() => setMobileMenuOpen(false)} href="/about" className="px-4 py-3 text-base font-medium rounded-lg hover:bg-gray-50">About Us</Link>
+              <div className="px-6 flex flex-col space-y-3 flex-grow">
+                <Link onClick={() => setMobileMenuOpen(false)} href="/" className="px-4 py-3.5 text-lg font-medium rounded-xl hover:bg-primary/5 hover:text-primary transition-colors">Home</Link>
+                <Link onClick={() => setMobileMenuOpen(false)} href="/about" className="px-4 py-3.5 text-lg font-medium rounded-xl hover:bg-primary/5 hover:text-primary transition-colors">About Us</Link>
                 
-                <div className="border-t border-b border-gray-100 my-2">
+                <div className="border-y border-gray-100/50 my-2 py-2">
                   <button 
                     onClick={() => setServicesExpanded(!servicesExpanded)} 
-                    className="w-full flex items-center justify-between px-4 py-3 text-base font-medium hover:bg-gray-50"
+                    className="w-full flex items-center justify-between px-4 py-3.5 text-lg font-medium hover:bg-primary/5 rounded-xl transition-colors"
                   >
                     Our Services
                     <ChevronDown className={cn("w-5 h-5 transition-transform", servicesExpanded && "rotate-180")} />
@@ -153,15 +153,15 @@ export function Navbar() {
                         exit={{ height: 0, opacity: 0 }}
                         className="overflow-hidden"
                       >
-                        <div className="pl-6 pr-4 pb-3 flex flex-col space-y-1">
+                        <div className="pl-6 pr-4 pb-3 pt-2 flex flex-col space-y-2">
                           {services.map(s => (
                             <Link 
                               key={s.name} 
                               href={s.href} 
                               onClick={() => setMobileMenuOpen(false)}
-                              className="px-4 py-2 text-sm text-text-secondary hover:text-primary hover:bg-gray-50 rounded-lg flex items-center"
+                              className="px-4 py-2.5 text-base text-text-secondary hover:text-primary hover:bg-primary/5 rounded-lg flex items-center transition-colors"
                             >
-                              <s.icon className="w-4 h-4 mr-3 opacity-60" />
+                              <s.icon className="w-5 h-5 mr-4 opacity-70 text-primary" />
                               {s.name}
                             </Link>
                           ))}
@@ -171,12 +171,12 @@ export function Navbar() {
                   </AnimatePresence>
                 </div>
 
-                <Link onClick={() => setMobileMenuOpen(false)} href="/blog" className="px-4 py-3 text-base font-medium rounded-lg hover:bg-gray-50">Blog</Link>
-                <Link onClick={() => setMobileMenuOpen(false)} href="/contact" className="px-4 py-3 text-base font-medium rounded-lg hover:bg-gray-50">Contact Us</Link>
+                <Link onClick={() => setMobileMenuOpen(false)} href="/blog" className="px-4 py-3.5 text-lg font-medium rounded-xl hover:bg-primary/5 hover:text-primary transition-colors">Blog</Link>
+                <Link onClick={() => setMobileMenuOpen(false)} href="/contact" className="px-4 py-3.5 text-lg font-medium rounded-xl hover:bg-primary/5 hover:text-primary transition-colors">Contact Us</Link>
               </div>
 
-              <div className="px-6 mt-8">
-                <Button variant="gradient" className="w-full" asChild onClick={() => setMobileMenuOpen(false)}>
+              <div className="px-8 mt-10">
+                <Button variant="gradient" className="w-full py-6 text-lg shadow-lg shadow-primary/20" asChild onClick={() => setMobileMenuOpen(false)}>
                   <Link href="/contact">Book Today</Link>
                 </Button>
                 <div className="mt-8 pt-6 border-t border-gray-100 flex flex-col space-y-3 px-2 text-sm text-text-secondary">

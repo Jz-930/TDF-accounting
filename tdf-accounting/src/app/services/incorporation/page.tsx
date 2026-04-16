@@ -13,7 +13,7 @@ export default function IncorporationPage() {
     <>
       <PageHero 
         title="Incorporation"
-        imagePath="/images/banner-service-incorporation.jpg"
+        imagePath="/images/banner-service-incorporation.webp"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Our Services" },
@@ -26,7 +26,7 @@ export default function IncorporationPage() {
       </ServiceIntro>
 
       <ServiceDetail 
-        imagePath="/images/Sliderimg1.jpg"
+        imagePath="/images/Sliderimg1.webp"
         content={
           <>
             <p>

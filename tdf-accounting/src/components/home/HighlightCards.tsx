@@ -27,11 +27,11 @@ const highlights = [
 export function HighlightCards() {
   return (
     <section className="relative z-30 pb-20 -mt-8 md:-mt-16 lg:-mt-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-300">
         <ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {highlights.map((item) => (
-              <Card key={item.title} variant="glass" className="h-full flex flex-col p-8 md:p-10 relative group border-white/60 bg-white/70 backdrop-blur-3xl overflow-hidden hover:bg-white/95">
+              <Card key={item.title} variant="glass" className="h-full flex flex-col p-8 lg:p-10 relative group border-white/60 bg-white/70 backdrop-blur-3xl overflow-hidden hover:bg-white/95 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                 <div className="absolute -top-24 -right-24 w-48 h-48 bg-primary/10 rounded-full blur-3xl group-hover:bg-accent/20 transition-all duration-700" />
                 
                 <div className="relative z-10 w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center mb-6 group-hover:from-primary group-hover:to-accent transition-colors duration-500 shadow-inner">

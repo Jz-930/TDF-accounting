@@ -13,7 +13,7 @@ export default function TaxPage() {
     <>
       <PageHero 
         title="Tax Services"
-        imagePath="/images/banner-service-tax.jpg"
+        imagePath="/images/banner-service-tax.webp"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Our Services" },
@@ -26,7 +26,7 @@ export default function TaxPage() {
       </ServiceIntro>
 
       <ServiceDetail 
-        imagePath="/images/Advisory-banner-pic.jpg"
+        imagePath="/images/Advisory-banner-pic.webp"
         imageOnLeft={false}
         content={
           <p className="mb-4">
