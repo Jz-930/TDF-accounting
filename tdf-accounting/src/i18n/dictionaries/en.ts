@@ -3,7 +3,7 @@ export const en = {
     topbar: {
       address: "6F, 15 Allstate Parkway, Markham, ON L3R 5B4",
       phone: "647-877-5996",
-      email: "info@tdfaccounting.com",
+      email: "crystaltaxation@gmail.com",
     },
     navbar: {
       home: "Home",
@@ -81,7 +81,7 @@ export const en = {
       name: "Jing Li",
       role: "Partner, Founder | CPA, MBA",
       p1: "Jing Li brings over a decade of extensive experience in corporate taxation, business consulting, and financial accounting. She has a proven track record of helping businesses streamline their financial operations and maximize tax efficiencies.",
-      p2: "Prior to establishing TDF Accounting, Jing gained invaluable expertise working for top-tier accounting firms, cultivating a deep understanding of complex tax regulations across multiple industries. Her mission is to deliver large-firm expertise with boutique-level personalized service."
+      p2: "Prior to establishing TDF Accounting, Jing gained invaluable expertise working for an international accounting organization, cultivating a deep understanding of complex tax regulations across multiple industries. Her mission is to deliver large-firm expertise with boutique-level personalized service."
     },
     testimonials: {
       label: "Testimonials",
@@ -129,7 +129,7 @@ export const en = {
     },
     stats: {
       projects: "Successful Projects",
-      team: "Team Members",
+      team: "Years of Experience",
       clients: "Happy Clients"
     }
   },

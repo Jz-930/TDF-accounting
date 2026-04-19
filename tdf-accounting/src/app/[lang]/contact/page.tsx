@@ -72,8 +72,8 @@ export default async function ContactPage(props: { params: Promise<{ lang: strin
                       </div>
                       <div>
                         <p className="font-semibold mb-1 text-lg">{dict.contact.emailLabel}</p>
-                        <a href="mailto:info@tdfaccounting.com" className="text-white/80 hover:text-accent transition-colors block break-all">
-                          info@tdfaccounting.com
+                        <a href="mailto:crystaltaxation@gmail.com" className="text-white/80 hover:text-accent transition-colors block break-all">
+                          crystaltaxation@gmail.com
                         </a>
                       </div>
                     </div>

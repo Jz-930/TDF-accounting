@@ -43,7 +43,7 @@ export function Footer({ dict, lang }: FooterProps) {
               <Link href={`/${lang}/contact`} className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
                 <MessageCircle className="w-5 h-5 text-white" />
               </Link>
-              <a href="mailto:info@tdfaccounting.com" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+              <a href="mailto:crystaltaxation@gmail.com" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
                 <Mail className="w-5 h-5 text-white" />
               </a>
             </div>
@@ -86,7 +86,7 @@ export function Footer({ dict, lang }: FooterProps) {
                 </a>
               </li>
               <li>
-                <a href="mailto:info@tdfaccounting.com" className="flex items-center hover:text-accent transition-colors">
+                <a href="mailto:crystaltaxation@gmail.com" className="flex items-center hover:text-accent transition-colors">
                   <Mail className="w-5 h-5 mr-3 text-accent shrink-0" />
                   {dict.layout.topbar.email}
                 </a>

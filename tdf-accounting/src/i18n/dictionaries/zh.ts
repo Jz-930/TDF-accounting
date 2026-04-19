@@ -5,7 +5,7 @@ export const zh: Dictionary = {
     topbar: {
       address: "6F, 15 Allstate Parkway, Markham, ON L3R 5B4", // Keep place name
       phone: "647-877-5996",
-      email: "info@tdfaccounting.com",
+      email: "crystaltaxation@gmail.com",
     },
     navbar: {
       home: "首页",
@@ -83,7 +83,7 @@ export const zh: Dictionary = {
       name: "李晶",
       role: "合伙人, 创始人 | CPA, MBA",
       p1: "李晶在企业税务、商业咨询和财务会计领域拥有超过十年的丰富经验。她曾在帮助企业优化财务运营并实现税务效率最大化方面有着卓越的业绩记录。",
-      p2: "在创立 TDF Accounting 之前，李晶在顶尖会计师事务所积累了宝贵的专业经验，深入了解跨多个行业的复杂税务法规。她的使命是以精品级的个性化服务，提供比肩大型事务所的专业能力。"
+      p2: "在创立 TDF Accounting 之前，李晶在国际会计组织积累了宝贵的专业经验，深入了解跨多个行业的复杂税务法规。她的使命是以精品级的个性化服务，提供比肩大型事务所的专业能力。"
     },
     testimonials: {
       label: "客户评价",
@@ -131,7 +131,7 @@ export const zh: Dictionary = {
     },
     stats: {
       projects: "成功案例",
-      team: "团队成员",
+      team: "年从业经验",
       clients: "满意的客户"
     }
   },

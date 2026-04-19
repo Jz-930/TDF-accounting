@@ -5,7 +5,7 @@ import { Dictionary } from "@/i18n/dictionaries/en";
 export function StatsCounter({ dict }: { dict: Dictionary }) {
   const stats = [
     { value: 1500, suffix: "+", label: dict.about.stats.projects },
-    { value: 50, suffix: "+", label: dict.about.stats.team },
+    { value: 11, suffix: "", label: dict.about.stats.team },
     { value: 250, suffix: "+", label: dict.about.stats.clients },
   ];
 

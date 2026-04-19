@@ -39,7 +39,7 @@ export function TeamSection({ dict, lang }: { dict: Dictionary, lang: string }) 
               <div className="w-full md:w-3/5 p-8 md:p-12 flex flex-col justify-center">
                 <div className="flex items-center justify-between mb-2">
                   <h3 className="text-3xl font-bold text-text-primary">{dict.home.team.name}</h3>
-                  <a href="mailto:info@tdfaccounting.com" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-primary">
+                  <a href="mailto:crystaltaxation@gmail.com" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-primary">
                     <Mail className="w-5 h-5" />
                   </a>
                 </div>

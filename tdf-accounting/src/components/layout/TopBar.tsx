@@ -24,7 +24,7 @@ export function TopBar({ dict }: TopBarProps) {
               <Phone className="w-3.5 h-3.5 mr-1.5 text-primary" />
               <span>{dict.layout.topbar.phone}</span>
             </a>
-            <a href="mailto:info@tdfaccounting.com" className="flex items-center hover:text-primary transition-colors">
+            <a href="mailto:crystaltaxation@gmail.com" className="flex items-center hover:text-primary transition-colors">
               <Mail className="w-3.5 h-3.5 mr-1.5 text-primary" />
               <span>{dict.layout.topbar.email}</span>
             </a>
